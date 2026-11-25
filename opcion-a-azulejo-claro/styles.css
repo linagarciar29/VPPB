@@ -1,0 +1,71 @@
+/* =========================================================
+   VOEG · Opción A — "Azulejo Clínico"
+   Claro, limpio, inspirado en el azulejo de talavera en gris azulado.
+   Paleta: gris azulejo #4A6F8F · niebla #7FA3BF · porcelana #F2F5F8
+           terracota suave #C9845E · salvia #6FA596 · tinta #1E2A36
+   ========================================================= */
+:root{
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,monospace;
+  --bg:#EEF2F6; --surface:#FFFFFF; --surface-2:#F1F5F8; --input:#F8FAFC;
+  --text:#1E2A36; --muted:#6B7C8C; --line:#DFE6EC; --line-strong:#C7D3DD;
+  --primary:#4A6F8F; --primary-2:#7FA3BF; --primary-soft:rgba(74,111,143,.12); --on-primary:#fff;
+  --accent:#C9845E; --accent-soft:rgba(201,132,94,.14);
+  --ok:#4E9C84; --warn:#C98A2E; --warn-soft:#FBEFD9; --err:#C2574E;
+  --c-yaw:#3E6E96; --c-pitch:#C9845E; --c-roll:#5FA38F; --grid:rgba(74,111,143,.14);
+  --cm-0:#1B2B3D; --cm-1:#36597A; --cm-2:#6F98BA; --cm-3:#C3D8E6; --cm-4:#F3E3CF;
+  --video-bg:#24313D; --video-muted:#93A6B6;
+  --toast-bg:#1E2A36; --toast-text:#F1F5F8;
+  --radius:20px; --radius-btn:12px; --radius-input:11px;
+  --shadow:0 1px 2px rgba(30,42,54,.04),0 8px 24px -12px rgba(30,42,54,.12);
+}
+html.alt{--bg:#E3E9EF;--line:#C7D3DD;--muted:#4F5F6E;--primary:#36597A}
+
+/* Fondo con patrón de azulejo */
+body{background:
+  radial-gradient(1200px 500px at 100% -10%,rgba(127,163,191,.22),transparent 60%),
+  radial-gradient(900px 400px at -10% 110%,rgba(201,132,94,.10),transparent 60%),var(--bg)}
+
+/* Barra superior + stepper horizontal */
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:20px;padding:12px clamp(16px,4vw,40px);background:rgba(255,255,255,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800;letter-spacing:.08em}
+.brand .logo{width:36px;height:36px}
+.stepper{position:relative;display:flex;flex:1;justify-content:center;gap:clamp(4px,2vw,28px)}
+.step{position:relative;z-index:1;display:flex;align-items:center;gap:8px;background:none;border:0;cursor:pointer;color:var(--muted);font-weight:600;font-size:.88rem;padding:6px 10px;border-radius:999px}
+.step .ico{display:none}
+.step .num{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;background:var(--surface);border:1.5px solid var(--line-strong);transition:all .25s}
+.step.done .num{background:var(--primary-2);border-color:var(--primary-2);color:#fff}
+.step.active{color:var(--primary)}
+.step.active .num{background:var(--primary);border-color:var(--primary);color:#fff;box-shadow:0 0 0 5px var(--primary-soft)}
+.step:hover{color:var(--primary)}
+.progress{display:none}
+.icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:1.1rem;color:var(--primary)}
+.main{max-width:1240px;margin:0 auto;padding:30px clamp(16px,4vw,40px) 60px}
+
+/* Pantalla 1 */
+html[data-step="1"] .topbar{background:transparent;border-color:transparent;backdrop-filter:none}
+html[data-step="1"] .stepper{visibility:hidden}
+#s1 .hero{position:relative;min-height:calc(100vh - 160px);display:grid;place-items:center;border-radius:32px;overflow:hidden;
+  background:linear-gradient(160deg,#5B7E9C 0%,#4A6F8F 45%,#344F69 100%)}
+.tiles{position:absolute;inset:0;opacity:.18;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23fff' stroke-width='1.6'%3E%3Crect x='1' y='1' width='118' height='118'/%3E%3Ccircle cx='60' cy='60' r='22'/%3E%3Ccircle cx='60' cy='60' r='9'/%3E%3Cpath d='M60 38c8-14 22-20 30-30M60 38c-8-14-22-20-30-30M60 82c8 14 22 20 30 30M60 82c-8 14-22 20-30 30M38 60c-14-8-20-22-30-30M38 60c-14 8-20 22-30 30M82 60c14-8 20-22 30-30M82 60c14 8 20 22 30 30'/%3E%3Cpath d='M0 0l22 22M120 0L98 22M0 120l22-22M120 120L98 98'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:120px 120px;mask-image:radial-gradient(circle at 50% 45%,transparent 18%,#000 75%)}
+.hero-card{position:relative;text-align:center;max-width:620px;padding:48px clamp(24px,5vw,56px);margin:24px;border-radius:28px;background:rgba(255,255,255,.94);box-shadow:0 30px 80px -30px rgba(18,32,48,.6)}
+.hero-card .logo{width:78px;height:78px;margin-bottom:14px;filter:drop-shadow(0 10px 18px rgba(74,111,143,.35))}
+.hero-card h1{font-size:clamp(3rem,8vw,4.6rem);font-weight:800;letter-spacing:.14em;color:var(--primary);line-height:1}
+.tagline{color:var(--muted);font-size:1.05rem;margin:14px auto 26px;max-width:46ch}
+.tagline b{color:var(--text)}
+.features{list-style:none;padding:0;margin:0 0 30px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.features li{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 6px;border-radius:14px;background:var(--surface-2);font-size:.82rem;font-weight:700;line-height:1.25}
+.features li small{font-weight:500;color:var(--muted)}
+.features .ico{width:26px;height:26px;color:var(--primary)}
+.fine{margin:18px 0 0;font-size:.75rem;color:var(--muted)}
+
+/* Ajustes de tarjetas */
+.card{backdrop-filter:blur(4px)}
+.toolbar{background:linear-gradient(90deg,#fff,#F5F8FB)}
+.recbar{background:rgba(255,255,255,.92);backdrop-filter:blur(10px)}
+.angle{background:linear-gradient(180deg,var(--surface-2),#fff)}
+
+@media (max-width:860px){.step .lbl{display:none}.stepper{gap:6px}}
+@media (max-width:600px){.features{grid-template-columns:repeat(2,1fr)}.brand span{display:none}}

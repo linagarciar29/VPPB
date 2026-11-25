@@ -1,0 +1,10 @@
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+# datos de pacientes: nunca al repositorio
+sesiones/
+*.webm
+*.mp4
+*.xlsx
