@@ -1,0 +1,95 @@
+/* =========================================================
+   VOEG · Azulejo Clínico (diseño principal)
+   Panel dividido de bienvenida + menú lateral gris azulejo.
+   Paleta: azulejo #4A6C8C · marino azulejo #2E4A63 · cielo #5E7F9E
+           porcelana #EEF2F6 · arena dorada #C9A77C · tinta #1F2D3A · salvia #4F9D8A
+   ========================================================= */
+:root{
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --bg:#EEF2F6; --surface:#FFFFFF; --surface-2:#F5F8FB; --input:#F5F8FB;
+  --text:#1F2D3A; --muted:#6B7C8D; --line:#D6DFE8; --line-strong:#C3CFDB;
+  --primary:#4A6C8C; --primary-2:#5E7F9E; --primary-soft:#E1EAF3; --on-primary:#fff;
+  --accent:#C9A77C; --accent-soft:rgba(201,167,124,.18);
+  --ok:#4F9D8A; --warn:#D9A441; --warn-soft:#FBF1DE; --err:#C0605A;
+  --c-yaw:#2F5D8A; --c-pitch:#4FA3A5; --c-roll:#C9A77C; --grid:#C9D4DF;
+  --cm-0:#16263A; --cm-1:#2E4A63; --cm-2:#5E7F9E; --cm-3:#B9CCDD; --cm-4:#F1E6D6;
+  --video-bg:#1B2733; --video-muted:#8A9BB0;
+  --toast-bg:#2E4A63; --toast-text:#fff;
+  --nav:#2E4A63; --nav-text:#DCE6F0; --rail:250px;
+  --radius:16px; --radius-btn:10px; --radius-input:8px;
+  --shadow:0 1px 2px rgba(31,45,58,.04),0 6px 18px -12px rgba(31,45,58,.18);
+}
+body{background:var(--bg)}
+h1,h2,h3,h4{letter-spacing:-.01em}
+.eyebrow{color:var(--primary);letter-spacing:.18em}
+.screen-head h2{font-weight:800}
+
+/* Menú lateral */
+.rail{position:fixed;inset:0 auto 0 0;width:var(--rail);z-index:20;display:flex;flex-direction:column;padding:26px 14px 20px;background:var(--nav);color:var(--nav-text)}
+.rail .brand{display:flex;align-items:center;gap:14px;padding:0 14px;margin-bottom:34px;text-decoration:none;color:#fff;font-weight:800;font-size:1.55rem;letter-spacing:.2em}
+.rail .brand .logo{width:38px;height:38px}
+.steps{display:flex;flex-direction:column;gap:8px}
+.step{display:flex;align-items:center;gap:14px;width:100%;padding:12px 13px;border:0;border-radius:10px;background:transparent;color:rgba(220,230,240,.55);text-align:left;cursor:pointer;transition:background .2s,color .2s}
+.step:hover{background:rgba(255,255,255,.05);color:var(--nav-text)}
+.step .num{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.85rem;border:2px solid rgba(220,230,240,.55);transition:all .2s}
+.step .lbl{display:flex;flex-direction:column;font-weight:700;font-size:.95rem;line-height:1.25}
+.step .lbl small{font-weight:400;font-size:.76rem;opacity:.8}
+.step.done{color:var(--nav-text)}
+.step.done .num{background:#fff;border-color:#fff;color:transparent;position:relative}
+.step.done .num::after{content:"✓";position:absolute;color:var(--nav);font-size:.85rem}
+.step.active{background:rgba(255,255,255,.09);color:#fff}
+.step.active .num{background:var(--accent);border-color:var(--accent);color:var(--nav)}
+.rail-foot{margin-top:auto;padding:0 14px;font-size:.76rem;color:rgba(220,230,240,.75)}
+.rail-pac{background:none;border:0;padding:0;align-items:flex-start;margin-bottom:12px;font-size:.78rem;color:var(--nav-text)}
+.rail-pac span{color:rgba(220,230,240,.7)}
+.main{margin-left:var(--rail);padding:30px clamp(18px,3vw,40px) 60px;max-width:calc(1240px + var(--rail))}
+
+/* Componentes */
+.card{border-color:#E3E9EF}
+.card h4{font-weight:700}
+legend .n{background:var(--primary-soft);color:var(--primary)}
+.chip input:checked+span{background:var(--primary);border-color:var(--primary)}
+.btn.primary{box-shadow:0 6px 16px -10px var(--primary)}
+.btn.primary:hover:not(:disabled){background:#3B5873;filter:none}
+.eye-tag{border-radius:10px}
+.cam[data-lado=oi] .eye-tag{background:var(--accent-soft);color:#9C7A4E}
+.angle{background:var(--surface-2);border:1px solid #E3E9EF;border-left:4px solid var(--c)}
+.recbar{background:#fff}
+input:focus,select:focus,textarea:focus{background:#fff}
+
+/* Bienvenida: panel dividido a pantalla completa */
+html[data-step="1"] .rail{display:none}
+html[data-step="1"] .main{margin-left:0;max-width:none;padding:0}
+.split{display:grid;grid-template-columns:11fr 9fr;min-height:100vh}
+.split-hero{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:64px;color:#fff;background:linear-gradient(135deg,#5E7F9E 0%,#2E4A63 100%);overflow:hidden}
+.split-hero::after{content:"";position:absolute;right:-120px;bottom:-120px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(255,255,255,.08);box-shadow:0 0 0 60px rgba(255,255,255,.025),0 0 0 120px rgba(255,255,255,.02)}
+.hero-mid{margin:auto 0}
+.hero-mid .logo{width:112px;height:112px;margin-bottom:26px}
+.split-hero h1{font-size:clamp(3.4rem,6vw,4.6rem);font-weight:800;letter-spacing:.14em;line-height:1}
+.split-hero p{margin:16px 0 0;font-size:1.15rem;color:rgba(255,255,255,.88);line-height:1.45}
+.split-hero small{color:rgba(255,255,255,.65);font-size:.8rem}
+.split-side{display:flex;flex-direction:column;justify-content:space-between;padding:64px 56px 48px;background:var(--bg)}
+.side-mid{margin:auto 0}
+.split-side h2{font-size:clamp(1.7rem,2.6vw,2.1rem);font-weight:800;line-height:1.18;margin-bottom:22px}
+.feat{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.feat li{display:flex;gap:18px}
+.feat b{flex:none;width:30px;color:var(--accent);font-size:1.25rem;font-weight:800}
+.feat h3{font-size:1rem;font-weight:700}
+.feat p{margin:2px 0 0;color:var(--muted);font-size:.92rem}
+.side-foot{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:32px}
+.side-foot .link{text-decoration:none}
+
+@media (max-width:900px){
+  .split{grid-template-columns:1fr}
+  .split-hero{padding:48px 28px 32px;min-height:46vh}
+  .split-side{padding:36px 28px 32px}
+  .rail{inset:auto 0 0 0;width:auto;height:68px;flex-direction:row;padding:6px;align-items:center}
+  .rail .brand,.rail-foot{display:none}
+  .steps{flex-direction:row;width:100%;justify-content:space-around;gap:2px}
+  .step{flex-direction:column;gap:3px;padding:6px 4px;width:auto;font-size:.7rem}
+  .step .lbl{font-size:.7rem;font-weight:600}.step .lbl small{display:none}
+  .step .num{width:26px;height:26px;font-size:.75rem}
+  .main{margin-left:0;padding-bottom:110px}
+  .recbar{bottom:80px}
+}
