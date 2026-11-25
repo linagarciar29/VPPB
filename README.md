@@ -3,6 +3,14 @@
 Aplicación web progresiva (se instala como app en computadora, tablet o celular y funciona sin internet) para la evaluación del **Vértigo Posicional Paroxístico Benigno**:
 video‑oculografía con dos cámaras, registro de ángulos cefálicos con un sensor en Arduino, análisis wavelet e inteligencia artificial.
 
+## Opción C · Clínico Pro (recomendada)
+
+![C](docs/c1.png)
+![C3](docs/c3.png)
+![C5](docs/c5.png)
+
+## Otras opciones
+
 | Opción A · Azulejo Clínico | Opción B · Noche Azulejo |
 |---|---|
 | ![A](docs/a1.png) | ![B](docs/b1.png) |

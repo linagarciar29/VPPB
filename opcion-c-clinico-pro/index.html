@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VOEG · Clínico Pro</title>
+<meta name="description" content="VOEG: diagnóstico asistido de VPPB con video‑oculografía, sensor cefálico, wavelet e IA.">
+<meta name="theme-color" content="#2B4256">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="../shared/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../shared/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/base.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="v-c">
+<header class="topbar"><a class="brand" data-goto="1" href="#1"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="voegG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--logo-1,#4C6A82)"/><stop offset="1" stop-color="var(--logo-2,#2B4256)"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#voegG)"/><path d="M19 19.5a15.5 15.5 0 0 1 26 0" fill="none" stroke="#9DB8CC" stroke-width="2.4" stroke-linecap="round"/><circle cx="45" cy="19.5" r="2.6" fill="#9DB8CC"/><path d="M9 36c6.5-9 14-13.5 23-13.5S48.5 27 55 36c-6.5 9-14 13.5-23 13.5S15.5 45 9 36z" fill="none" stroke="#fff" stroke-width="2.8" stroke-linejoin="round"/><circle cx="32" cy="36" r="8.6" fill="none" stroke="#fff" stroke-width="2.6"/><circle cx="32" cy="36" r="3.2" fill="#fff"/><path d="M18.5 36h3.6M41.9 36h3.6" stroke="#9DB8CC" stroke-width="2.2" stroke-linecap="round"/></svg><span class="wordmark"><b>VOEG</b><small>Video‑oculografía</small></span></a><nav class="stepper" aria-label="Pasos"><button class="step" data-goto="1"><span class="num">1</span><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lbl">Inicio</span></button><button class="step" data-goto="2"><span class="num">2</span><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 9a7 7 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lbl">Paciente</span></button><button class="step" data-goto="3"><span class="num">3</span><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12zm10 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lbl">Adquisición</span></button><button class="step" data-goto="4"><span class="num">4</span><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M2 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0 2 3 2 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lbl">Wavelet</span></button><button class="step" data-goto="5"><span class="num">5</span><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M9 3h6v4h4v6h-4v4H9v-4H5V7h4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lbl">Diagnóstico</span></button></nav><div class="session"><span class="pill live" id="sesionPill">Sesión clínica</span></div></header><main class="main">
+
+<section class="screen" id="s1">
+  <div class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Sistema de evaluación vestibular</p>
+      <h1>Diagnóstico de VPPB con video‑oculografía sincronizada</h1>
+      <p class="tagline">Registra ambos ojos y la posición de la cabeza con un mismo reloj, analiza la señal con wavelet y obtén un apoyo diagnóstico por inteligencia artificial.</p>
+      <div class="cta"><button class="btn primary xl" id="btnContinuar">Iniciar evaluación <span class="arr">→</span></button><span class="fine">Uso exclusivo de profesionales de la salud</span></div>
+      <ul class="specs">
+        <li><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12zm10 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Video binocular</b><span>Cámaras OD y OI por ID</span></div></li>
+        <li><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Sensor 3 ejes</b><span>Yaw, pitch y roll en vivo</span></div></li>
+        <li><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M2 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0 2 3 2 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Análisis wavelet</b><span>Escalograma tiempo‑frecuencia</span></div></li>
+        <li><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M9 3h6v4h4v6h-4v4H9v-4H5V7h4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Apoyo diagnóstico</b><span>Modelo de IA y reporte</span></div></li>
+      </ul>
+    </div>
+    <div class="hero-visual"><svg class="monitor" viewBox="0 0 520 380" aria-hidden="true">
+<rect x="1" y="1" width="518" height="378" rx="14" fill="#fff" stroke="#DCE3E9"/>
+<rect x="1" y="1" width="518" height="40" rx="14" fill="#F4F7F9"/><rect x="1" y="28" width="518" height="13" fill="#F4F7F9"/><line x1="1" y1="41" x2="519" y2="41" stroke="#DCE3E9"/>
+<circle cx="22" cy="21" r="5" fill="#2F8F6B"/><text x="34" y="25" font-family="IBM Plex Mono,monospace" font-size="11" fill="#5E7A90">ADQUISICIÓN · t0 00:12.4</text>
+<text x="498" y="25" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11" fill="#C24D4D">● REC</text>
+<g font-family="IBM Plex Mono,monospace" font-size="10" fill="#9DB8CC">
+<rect x="18" y="56" width="236" height="140" rx="8" fill="#1B2B39"/><rect x="266" y="56" width="236" height="140" rx="8" fill="#1B2B39"/>
+<text x="28" y="74">OD · cam 01</text><text x="276" y="74">OI · cam 02</text></g>
+<g fill="none" stroke="#7C97AC" stroke-width="1.6"><path d="M66 126c18-22 38-32 70-32s52 10 70 32c-18 22-38 32-70 32s-52-10-70-32z"/><path d="M314 126c18-22 38-32 70-32s52 10 70 32c-18 22-38 32-70 32s-52-10-70-32z"/></g>
+<circle cx="142" cy="124" r="19" fill="#3F5D75"/><circle cx="142" cy="124" r="8" fill="#0E1822"/><circle cx="390" cy="124" r="19" fill="#3F5D75"/><circle cx="390" cy="124" r="8" fill="#0E1822"/>
+<g stroke="#5FB3C0" stroke-width="1" opacity=".9"><path d="M136 124h-22M148 124h22M142 118v-22M142 130v22"/><path d="M384 124h-22M396 124h22M390 118v-22M390 130v22"/></g>
+<text x="18" y="222" font-family="IBM Plex Sans,sans-serif" font-size="11" font-weight="600" fill="#3F5D75">Posición cefálica</text>
+<g font-family="IBM Plex Mono,monospace" font-size="10"><text x="502" y="222" text-anchor="end" fill="#8A9BAA"><tspan fill="#2F6E9A">yaw +12.4°</tspan>   <tspan fill="#C7883A">pitch −31.0°</tspan>   <tspan fill="#2C8C99">roll +4.2°</tspan></text></g>
+<g stroke="#E8EDF1"><line x1="18" y1="250" x2="502" y2="250"/><line x1="18" y1="300" x2="502" y2="300"/><line x1="18" y1="350" x2="502" y2="350"/></g>
+<path d="M18 300 C60 300 80 255 120 258 S170 310 210 300 S260 240 300 262 S360 320 400 296 S460 282 502 290" fill="none" stroke="#2F6E9A" stroke-width="2"/>
+<path d="M18 320 C70 322 90 340 140 330 S210 280 250 300 S320 345 370 330 S450 300 502 316" fill="none" stroke="#C7883A" stroke-width="2"/>
+<path d="M18 286 C80 284 110 296 160 290 S240 270 280 280 S380 300 420 288 S480 280 502 284" fill="none" stroke="#2C8C99" stroke-width="2"/>
+</svg></div>
+  </div>
+  <div class="trust"><span><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Datos guardados en el equipo</span><span><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 8v4l3 2M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Reloj común t0</span><span><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Reporte clínico imprimible</span><span><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Excel de tiempos por sesión</span></div>
+</section>
+
+<section class="screen" id="s2">
+  <header class="screen-head"><div><p class="eyebrow">Paso 2 de 5</p><h2>Datos del paciente</h2><p class="lead">Registro clínico previo a la evaluación vestibular. Los campos con * son obligatorios.</p></div></header>
+  <form id="patientForm" class="form" autocomplete="off" novalidate>
+    <fieldset class="card"><legend><span class="n">01</span>Identificación</legend>
+      <div class="grid g3">
+        <label class="f"><span>Nombre(s) *</span><input name="nombre" required placeholder="Ej. María Fernanda"></label>
+        <label class="f"><span>Apellidos *</span><input name="apellidos" required placeholder="Ej. López García"></label>
+        <label class="f"><span>Tipo de identificación</span><select name="tipoId"><option>CURP</option><option>INE</option><option>Pasaporte</option><option>NSS</option><option>Otro</option></select></label>
+        <label class="f"><span>Número de identificación *</span><input name="identificacion" required placeholder="LOGM900101MQTPRR09"></label>
+        <label class="f"><span>No. de expediente</span><input name="expediente" placeholder="EXP-000123"></label>
+        <label class="f"><span>Sexo *</span><select name="sexo" required><option value="">Selecciona</option><option>Femenino</option><option>Masculino</option><option>Otro</option></select></label>
+        <label class="f"><span>Fecha de nacimiento *</span><input type="date" name="nacimiento" required></label>
+        <label class="f"><span>Edad</span><input name="edad" readonly placeholder="Automática"></label>
+        <label class="f"><span>Teléfono</span><input type="tel" name="telefono" placeholder="442 000 0000"></label>
+        <label class="f"><span>Correo</span><input type="email" name="correo" placeholder="paciente@correo.com"></label>
+        <label class="f span2"><span>Contacto de emergencia</span><input name="emergencia" placeholder="Nombre y teléfono"></label>
+      </div>
+    </fieldset>
+    <fieldset class="card"><legend><span class="n">02</span>Datos del examen</legend>
+      <div class="grid g3">
+        <label class="f"><span>Fecha del examen *</span><input type="date" name="fechaExamen" required></label>
+        <label class="f"><span>Médico responsable *</span><input name="medico" required placeholder="Dr(a). Nombre"></label>
+        <label class="f"><span>Cédula profesional</span><input name="cedula" placeholder="0000000"></label>
+        <label class="f span2"><span>Institución / clínica</span><input name="institucion" placeholder="Nombre del consultorio u hospital"></label>
+        <label class="f"><span>Maniobra</span><select name="maniobra"><option>Dix-Hallpike</option><option>Supine Roll Test</option><option>Head Impulse</option><option>Otra</option></select></label>
+        <label class="f span3"><span>Motivo de consulta</span><textarea name="motivo" rows="2" placeholder="Describe el motivo principal…"></textarea></label>
+      </div>
+    </fieldset>
+    <fieldset class="card"><legend><span class="n">03</span>Historia clínica</legend>
+      <div class="f"><span>Síntomas</span><div class="chips"><label class="chip"><input type="checkbox" name="sintomas" value="Vértigo rotatorio"><span>Vértigo rotatorio</span></label><label class="chip"><input type="checkbox" name="sintomas" value="Náusea / vómito"><span>Náusea / vómito</span></label><label class="chip"><input type="checkbox" name="sintomas" value="Desequilibrio"><span>Desequilibrio</span></label><label class="chip"><input type="checkbox" name="sintomas" value="Nistagmo"><span>Nistagmo</span></label><label class="chip"><input type="checkbox" name="sintomas" value="Cefalea"><span>Cefalea</span></label><label class="chip"><input type="checkbox" name="sintomas" value="Hipoacusia"><span>Hipoacusia</span></label><label class="chip"><input type="checkbox" name="sintomas" value="Acúfenos"><span>Acúfenos</span></label></div></div>
+      <div class="grid g3">
+        <label class="f"><span>Inicio de síntomas</span><input type="date" name="inicioSintomas"></label>
+        <label class="f"><span>Duración de episodios</span><select name="duracion"><option value="">Selecciona</option><option>Menos de 1 min</option><option>1 a 5 min</option><option>Más de 5 min</option></select></label>
+        <label class="f"><span>Desencadenante</span><select name="desencadenante"><option value="">Selecciona</option><option>Al acostarse</option><option>Al girar en la cama</option><option>Al mirar hacia arriba</option><option>Al inclinarse</option><option>Espontáneo</option></select></label>
+      </div>
+      <div class="f"><span>Lado sospechado</span><div class="chips"><label class="chip"><input type="radio" name="ladoSospechado" value="Derecho"><span>Derecho</span></label><label class="chip"><input type="radio" name="ladoSospechado" value="Izquierdo"><span>Izquierdo</span></label><label class="chip"><input type="radio" name="ladoSospechado" value="Bilateral"><span>Bilateral</span></label><label class="chip"><input type="radio" name="ladoSospechado" value="No determinado"><span>No determinado</span></label></div></div>
+      <div class="f"><span>Antecedentes</span><div class="chips"><label class="chip"><input type="checkbox" name="antecedentes" value="Traumatismo craneal"><span>Traumatismo craneal</span></label><label class="chip"><input type="checkbox" name="antecedentes" value="Migraña"><span>Migraña</span></label><label class="chip"><input type="checkbox" name="antecedentes" value="Infección de oído"><span>Infección de oído</span></label><label class="chip"><input type="checkbox" name="antecedentes" value="Cirugía de oído"><span>Cirugía de oído</span></label><label class="chip"><input type="checkbox" name="antecedentes" value="VPPB previo"><span>VPPB previo</span></label><label class="chip"><input type="checkbox" name="antecedentes" value="Osteoporosis"><span>Osteoporosis</span></label><label class="chip"><input type="checkbox" name="antecedentes" value="Diabetes"><span>Diabetes</span></label><label class="chip"><input type="checkbox" name="antecedentes" value="Hipertensión"><span>Hipertensión</span></label></div></div>
+      <div class="f"><span>Contraindicaciones para maniobras</span><div class="chips"><label class="chip"><input type="checkbox" name="contraindicaciones" value="Lesión cervical"><span>Lesión cervical</span></label><label class="chip"><input type="checkbox" name="contraindicaciones" value="Insuficiencia vertebrobasilar"><span>Insuficiencia vertebrobasilar</span></label><label class="chip"><input type="checkbox" name="contraindicaciones" value="Cirugía de columna reciente"><span>Cirugía de columna reciente</span></label><label class="chip"><input type="checkbox" name="contraindicaciones" value="Ninguna"><span>Ninguna</span></label></div></div>
+      <div class="grid g2">
+        <label class="f"><span>Medicamentos actuales</span><input name="medicamentos" placeholder="Ej. betahistina 16 mg"></label>
+        <label class="f"><span>Alergias</span><input name="alergias" placeholder="Ninguna conocida"></label>
+        <label class="f span2"><span>Notas</span><textarea name="notas" rows="2" placeholder="Observaciones adicionales"></textarea></label>
+      </div>
+    </fieldset>
+    <label class="consent card"><input type="checkbox" name="consentimiento" value="si" required><span>El paciente otorgó su <b>consentimiento informado</b> para la grabación de video ocular y el registro de movimiento cefálico con fines diagnósticos.</span></label>
+    <div class="actions"><button type="button" class="btn ghost" id="btnLimpiar">Limpiar</button><button type="submit" class="btn primary">Guardar y continuar <span class="arr">→</span></button></div>
+  </form>
+</section>
+
+<section class="screen" id="s3">
+  <header class="screen-head"><div><p class="eyebrow">Paso 3 de 5</p><h2>Adquisición</h2><p class="lead">Conecta las cámaras OD/OI y el sensor. Al iniciar, todo arranca con el mismo reloj.</p></div><div class="pacienteMini"></div></header>
+  <div class="toolbar card">
+    <button class="btn primary" id="btnConectar"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M9 7V3m6 4V3M7 7h10v4a5 5 0 0 1-10 0zm5 9v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Conectar cámaras y sensor</button>
+    <button class="btn ghost" id="btnDemo" title="Simula el sensor si aún no tienes el Arduino">Sensor demo</button>
+    <button class="btn ghost" id="btnSwap" title="Intercambiar ojo derecho e izquierdo">OD ⇄ OI</button>
+    <label class="f mini"><span>FPS</span><select id="fps"><option>30</option><option>60</option><option>120</option></select></label>
+    <label class="f mini"><span>Baudios</span><select id="baud"><option>9600</option><option>57600</option><option selected>115200</option><option>230400</option></select></label>
+    <div class="status"><span id="statusCams" class="pill">Cámaras sin conectar</span><span id="statusSensor" class="pill">Sensor sin conectar</span></div>
+  </div>
+  <div class="acq-grid">
+    <article class="card cam" data-lado="od">
+          <div class="cam-top"><span class="eye-tag">OD</span><div><h4>Ojo derecho</h4><div class="cam-id" id="idOD"><small>Sin cámara</small></div></div></div>
+          <div class="video-wrap"><video id="videoOD" muted playsinline autoplay></video><div class="video-empty"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12zm10 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Conecta la cámara del ojo derecho</span></div><span class="rec-dot">REC</span></div>
+          <label class="f"><span>Cámara asignada</span><select id="camOD"><option value="">— Conecta para ver cámaras —</option></select></label>
+        </article>
+    <article class="card cam" data-lado="oi">
+          <div class="cam-top"><span class="eye-tag">OI</span><div><h4>Ojo izquierdo</h4><div class="cam-id" id="idOI"><small>Sin cámara</small></div></div></div>
+          <div class="video-wrap"><video id="videoOI" muted playsinline autoplay></video><div class="video-empty"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12zm10 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Conecta la cámara del ojo izquierdo</span></div><span class="rec-dot">REC</span></div>
+          <label class="f"><span>Cámara asignada</span><select id="camOI"><option value="">— Conecta para ver cámaras —</option></select></label>
+        </article>
+    <article class="card sensor">
+      <div class="card-title"><h4>Sensor de posición cefálica</h4><span class="muted">grados</span></div>
+      <div class="angles">
+        <div class="angle yaw"><span>Yaw · giro</span><b id="yawVal">+0.0°</b></div>
+        <div class="angle pitch"><span>Pitch · flexión</span><b id="pitchVal">+0.0°</b></div>
+        <div class="angle roll"><span>Roll · lateral</span><b id="rollVal">+0.0°</b></div>
+      </div>
+      <div class="head-stage"><div id="head3d" class="head"><svg viewBox="0 0 100 120"><ellipse cx="50" cy="58" rx="34" ry="44" fill="var(--surface-2)" stroke="var(--primary)" stroke-width="2.5"/><ellipse cx="16" cy="62" rx="5" ry="10" fill="var(--surface-2)" stroke="var(--primary)" stroke-width="2.5"/><ellipse cx="84" cy="62" rx="5" ry="10" fill="var(--surface-2)" stroke="var(--primary)" stroke-width="2.5"/><circle cx="37" cy="52" r="5" fill="var(--primary)"/><circle cx="63" cy="52" r="5" fill="var(--primary)"/><path d="M50 58v12h-5" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round"/><path d="M40 84q10 6 20 0" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+    </article>
+    <article class="card chart">
+      <div class="card-title"><h4>Ángulos de la cabeza · últimos 10 s</h4><div class="legend"><i class="yaw"></i>Yaw<i class="pitch"></i>Pitch<i class="roll"></i>Roll</div></div>
+      <canvas id="angleChart"></canvas>
+    </article>
+  </div>
+  <div class="recbar card">
+    <div class="rec-time"><span class="dot"></span><b id="recTimer">00:00.0</b><small>t0 común · cámaras + sensor</small></div>
+    <button class="btn start" id="btnIniciar" disabled><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M8 5v14l11-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Iniciar</button>
+    <button class="btn stop" id="btnFinalizar" disabled><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M6 6h12v12H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Finalizar y guardar</button>
+    <button class="btn ghost" id="btnASiguiente" data-goto="4">Ir a wavelet →</button>
+  </div>
+  <ul id="fileList" class="files"></ul>
+</section>
+
+<section class="screen" id="s4">
+  <header class="screen-head"><div><p class="eyebrow">Paso 4 de 5</p><h2>Procesamiento wavelet</h2><p class="lead">Transforma la señal registrada en un escalograma tiempo‑frecuencia para el modelo de IA.</p></div><div class="pacienteMini"></div></header>
+  <div class="wave-grid">
+    <article class="card controls">
+      <h4>Parámetros</h4>
+      <label class="f"><span>Señal a analizar</span><select id="signalSel"><option value="pitch">Pitch · flexión</option><option value="yaw">Yaw · giro</option><option value="roll">Roll · lateral</option></select></label>
+      <label class="f"><span>Servidor con tu código (opcional)</span><input id="servidorURL" placeholder="http://localhost:8000"><small class="hint">Vacío = modo demo en el navegador. Con URL, la app envía videos, sensor y sesión a tu código Python.</small></label>
+      <button class="btn primary block" id="btnWavelet"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M2 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0 2 3 2 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Procesar wavelet</button>
+      <div class="or"><span>o</span></div>
+      <label class="btn ghost block file">Subir imagen wavelet<input type="file" id="waveletUpload" accept="image/*" hidden></label>
+    </article>
+    <article class="card output">
+      <div class="card-title"><h4>Escalograma</h4><span class="muted" id="waveletInfo">Sin procesar</span></div>
+      <div class="scalo-wrap"><canvas id="scalogram"></canvas><img id="waveletImg" alt="Imagen wavelet"><div class="scalo-empty"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M2 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0 2 3 2 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Aquí aparecerá la imagen wavelet</span></div></div>
+      <div class="axis"><span>Tiempo →</span><span>↑ Escala (frecuencia)</span></div>
+      <div class="actions"><button class="btn primary" id="btnADiag" data-goto="5" disabled>Continuar al diagnóstico →</button></div>
+    </article>
+  </div>
+</section>
+
+<section class="screen" id="s5">
+  <header class="screen-head"><div><p class="eyebrow">Paso 5 de 5</p><h2>Diagnóstico de VPPB</h2><p class="lead">La imagen wavelet entra a tu arquitectura de IA y obtienes el resultado con su nivel de confianza.</p></div><div class="pacienteMini"></div></header>
+  <div class="dx-grid">
+    <article class="card dx-input">
+      <div class="card-title"><h4>Entrada al modelo</h4><label class="link file">Cambiar imagen<input type="file" id="diagUpload" accept="image/*" hidden></label></div>
+      <div class="dx-img"><img id="diagImg" alt=""><div class="scan"></div><span class="scalo-empty"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M2 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0 2 3 2 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sin imagen wavelet</span></span></div>
+      <button class="btn primary block" id="btnDiagnosticar"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M9 3h6v4h4v6h-4v4H9v-4H5V7h4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Analizar con IA</button>
+    </article>
+    <article class="card dx-out">
+      <div id="diagResult" class="dx-result"><div class="dx-wait"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 8v4l3 2M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p>El resultado aparecerá aquí</p></div></div>
+      <div class="actions"><button class="btn ghost" id="btnNueva">Nueva evaluación</button><button class="btn primary" id="btnReporte" disabled>Imprimir reporte</button></div>
+    </article>
+  </div>
+  <p class="disclaimer">VOEG es una herramienta de apoyo. El diagnóstico final corresponde al profesional de la salud.</p>
+</section>
+</main><footer class="foot"><span>VOEG · Sistema de apoyo al diagnóstico vestibular</span><span>Uso exclusivo de profesionales de la salud</span></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="../shared/xlsx.js"></script>
+<script src="../shared/plugins.js"></script>
+<script src="../shared/app.js"></script>
+</body>
+</html>

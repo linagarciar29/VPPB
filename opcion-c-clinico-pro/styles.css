@@ -1,0 +1,87 @@
+/* =========================================================
+   VOEG · Opción C — "Clínico Pro"
+   Sobrio, de grado hospitalario. Gris azulejo profundo con blancos clínicos.
+   Paleta: gris azulejo #3F5D75 · pizarra #2B4256 · acero #7C97AC · niebla #9DB8CC
+           porcelana #F3F5F7 · tinta #17232E · azul señal #2F6E9A · turquesa clínico #2C8C99
+   ========================================================= */
+:root{
+  --font:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --bg:#F3F5F7; --surface:#FFFFFF; --surface-2:#F4F7F9; --input:#FFFFFF;
+  --text:#17232E; --muted:#5F7182; --line:#E1E6EB; --line-strong:#CBD4DC;
+  --primary:#3F5D75; --primary-2:#7C97AC; --primary-soft:rgba(63,93,117,.10); --on-primary:#fff;
+  --accent:#2C8C99; --accent-soft:rgba(44,140,153,.12);
+  --ok:#2F8F6B; --warn:#B7791F; --warn-soft:#FBF1DE; --err:#C24D4D;
+  --c-yaw:#2F6E9A; --c-pitch:#C7883A; --c-roll:#2C8C99; --grid:rgba(63,93,117,.12);
+  --cm-0:#13202C; --cm-1:#2B4256; --cm-2:#5E7A90; --cm-3:#A9C1D3; --cm-4:#EEF3F7;
+  --video-bg:#1B2B39; --video-muted:#7C97AC;
+  --toast-bg:#17232E; --toast-text:#F3F5F7;
+  --logo-1:#4C6A82; --logo-2:#2B4256;
+  --radius:12px; --radius-btn:8px; --radius-input:8px;
+  --shadow:0 1px 2px rgba(23,35,46,.05),0 1px 0 rgba(23,35,46,.02);
+}
+body{background:var(--bg)}
+h1,h2,h3,h4{letter-spacing:-.015em}
+.eyebrow{color:var(--primary-2);letter-spacing:.16em;font-weight:600}
+
+/* Barra superior */
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:24px;height:64px;padding:0 clamp(16px,3vw,32px);background:#fff;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--text)}
+.brand .logo{width:36px;height:36px}
+.wordmark{display:flex;flex-direction:column;line-height:1}
+.wordmark b{font-size:1.15rem;font-weight:700;letter-spacing:.2em;color:#1B2B39}
+.wordmark small{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-2);margin-top:4px}
+.stepper{display:flex;flex:1;justify-content:center;align-self:stretch}
+.step{position:relative;display:flex;align-items:center;gap:9px;background:none;border:0;cursor:pointer;color:var(--muted);font-weight:500;font-size:.875rem;padding:0 16px}
+.step .ico{display:none}
+.step .num{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font:600 .72rem var(--font-mono);border:1.5px solid var(--line-strong);color:var(--muted);transition:all .2s}
+.step::after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:2px;background:transparent;transition:background .2s}
+.step.done .num{background:var(--primary-2);border-color:var(--primary-2);color:#fff}
+.step.active{color:var(--text);font-weight:600}
+.step.active .num{background:var(--primary);border-color:var(--primary);color:#fff}
+.step.active::after{background:var(--primary)}
+.step:hover{color:var(--text)}
+.session .pill{background:var(--surface-2)}
+.main{max-width:1280px;margin:0 auto;padding:28px clamp(16px,3vw,32px) 48px}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:1280px;margin:0 auto;padding:16px clamp(16px,3vw,32px) 28px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}
+
+/* Encabezados de pantalla */
+.screen-head{padding-bottom:18px;border-bottom:1px solid var(--line)}
+.screen-head h2{font-size:clamp(1.45rem,2.4vw,1.85rem);font-weight:600}
+.pacienteMini{border-radius:8px;border-left:3px solid var(--primary)}
+.card{box-shadow:var(--shadow)}
+.card h4{font-weight:600;font-size:.95rem}
+legend{font-weight:600}
+legend .n{background:var(--primary);color:#fff;border-radius:4px}
+.chip span{border-radius:6px;padding:6px 12px}
+.btn{font-weight:600}
+.btn.primary{box-shadow:none}
+.btn.primary:hover:not(:disabled){background:#2B4256;filter:none;box-shadow:none}
+.btn.xl{padding:14px 26px;font-size:1rem;border-radius:8px}
+.eye-tag{border-radius:8px}
+.angle{border-radius:8px;background:var(--surface-2)}
+.toolbar{background:#fff}
+.recbar{background:#fff;border-color:var(--line-strong);box-shadow:0 8px 24px -16px rgba(23,35,46,.3)}
+
+/* Pantalla 1 */
+html[data-step="1"] .stepper{visibility:hidden}
+html[data-step="1"] .foot{display:flex}
+#s1 .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center;padding:clamp(16px,4vw,48px) 0 clamp(20px,3vw,36px)}
+#s1 h1{font-size:clamp(2rem,3.8vw,3rem);font-weight:600;line-height:1.12;color:#1B2B39;max-width:18ch}
+#s1 .tagline{color:var(--muted);font-size:1.05rem;margin:18px 0 28px;max-width:52ch}
+.cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:34px}
+.fine{font-size:.78rem;color:var(--muted)}
+.specs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.specs li{display:flex;gap:12px;align-items:flex-start;padding:16px;background:#fff}
+.specs .ico{width:22px;height:22px;color:var(--primary);margin-top:2px}
+.specs b{display:block;font-size:.9rem;font-weight:600}
+.specs span{font-size:.8rem;color:var(--muted)}
+.hero-visual{position:relative}
+.hero-visual::before{content:"";position:absolute;inset:-6% -4% -6% 8%;background:linear-gradient(160deg,#4C6A82,#2B4256);border-radius:20px;z-index:0}
+.monitor{position:relative;z-index:1;width:100%;height:auto;display:block;transform:translateX(-6%);filter:drop-shadow(0 24px 40px rgba(23,35,46,.28))}
+.trust{display:flex;flex-wrap:wrap;gap:10px 28px;padding:18px 0 4px;border-top:1px solid var(--line);margin-top:20px;font-size:.82rem;color:var(--muted)}
+.trust span{display:flex;align-items:center;gap:8px}
+.trust .ico{width:18px;height:18px;color:var(--primary-2)}
+
+@media (max-width:980px){#s1 .hero{grid-template-columns:1fr}.monitor{transform:none}.hero-visual::before{inset:-4% -3%}.step .lbl{display:none}.step{padding:0 10px}}
+@media (max-width:640px){.specs{grid-template-columns:1fr}.wordmark small{display:none}.session{display:none}.topbar{gap:10px}}
